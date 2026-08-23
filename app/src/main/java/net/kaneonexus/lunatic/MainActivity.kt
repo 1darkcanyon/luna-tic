@@ -1,16 +1,24 @@
 package net.kaneonexus.lunatic
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import net.kaneonexus.lunatic.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tv = TextView(this)
-        tv.text = "LUNA-TIC is alive"
-        tv.setTextColor(android.graphics.Color.CYAN)
-        tv.textSize = 24f
-        setContentView(tv)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.phaseNameText.text = "Test Phase"
+        binding.illuminationText.text = "Test illumination"
+        binding.gravIndexText.text = "Test grav index"
+        binding.nextFullMoonText.text = "Test full moon"
+        binding.dailyVibrationText.text = "Test vibration"
+        binding.tarotCardText.text = "Test card"
+        binding.tarotKeywordText.text = "Test keyword"
+        binding.journalHistoryText.text = "Test history"
     }
 }
